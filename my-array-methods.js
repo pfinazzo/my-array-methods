@@ -16,7 +16,26 @@ Array.prototype.reverseConcat = function(newArr){
   return this;
 }
 
-//[1,2,3].reverseConcat([2,3,4]) = [2,3,4,1,2,3]
+// [1,2,3].reverseConcat([2,3,4]) = [2,3,4,1,2,3]
+
+Array.prototype.flattenAll = function(){
+  var newArr = [];
+  var flatten = (array = this) => {
+    console.log(this, array);
+      array.forEach(function(num) {
+          if (typeof(num) === "number"){
+              newArr.push(num);
+          } else {
+              return flatten(num);
+          }
+      })
+      return newArr;
+  };
+  return flatten();
+}
+
+// [1,2,3,[1,2,3,[4,5,6,[7,8,9]]]].flattenAll = [1,2,3,1,2,3,4,5,6,7,8,9];
+
 
 
 
