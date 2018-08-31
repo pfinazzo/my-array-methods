@@ -21,18 +21,20 @@ Array.prototype.reverseConcat = function(newArr){
 Array.prototype.flattenAll = function(){
   var newArr = [];
   var flatten = (array = this) => {
-    console.log(this, array);
-      array.forEach(function(num) {
-          if (typeof(num) === "number"){
-              newArr.push(num);
+      array.forEach(value => {
+          if (!(Array.isArray(value))){
+              newArr.push(value);
           } else {
-              return flatten(num);
+              return flatten(value);
           }
       })
       return newArr;
   };
   return flatten();
 }
+
+var x =  ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]];
+console.log(x.flattenAll());
 
 // [1,2,3,[1,2,3,[4,5,6,[7,8,9]]]].flattenAll = [1,2,3,1,2,3,4,5,6,7,8,9];
 

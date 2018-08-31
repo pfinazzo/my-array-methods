@@ -18,7 +18,8 @@ To show how these work:
 
   a.reverseConcat(b) = [2,3,4,1,2,3];
 
-  ---
+* 2 Array.prototype.flattenAll
+  - takes array of arrays and 
   * more methods coming soon!
 
 
