@@ -33,11 +33,7 @@ Array.prototype.flattenAll = function(){
   return flatten();
 }
 
-var x =  ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]];
-console.log(x.flattenAll());
-
-// [1,2,3,[1,2,3,[4,5,6,[7,8,9]]]].flattenAll = [1,2,3,1,2,3,4,5,6,7,8,9];
-
+// ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]].flattenAll = ["p","a","t","r","i","c","k",{name:"patrick"},"m","n","o","p"]
 
 
 
