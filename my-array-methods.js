@@ -36,5 +36,3 @@ Array.prototype.flattenAll = function(){
 // ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]].flattenAll = ["p","a","t","r","i","c","k",{name:"patrick"},"m","n","o","p"]
 
 
-
-
