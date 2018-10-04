@@ -1,8 +1,8 @@
-var a = [1,2,3,8];
-var b = [4,5,6,7];
+var a = [1,2,3,4];
+var b = [5,6,7,8];
 
-var c = [1,2,3,4,5,6];
-var d = [6,7,8,9]
+// var c = [1,2,3,4,5,6];
+// var d = [6,7,8,9]
 
 Array.prototype.mirrorConcat = function(newArr){
   for (var i = 0; i < newArr.length; i++){
@@ -20,16 +20,17 @@ Array.prototype.reverseConcat = function(newArr){
 }
 
 // [1,2,3].reverseConcat([2,3,4]) = [2,3,4,1,2,3]
+var c = ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]]
+
+
+
+
 
 Array.prototype.flattenAll = function(){
   var newArr = [];
   var flatten = (array = this) => {
       array.forEach(value => {
-          if (!(Array.isArray(value))){
-              newArr.push(value);
-          } else {
-              return flatten(value);
-          }
+      return !(Array.isArray(value)) ? newArr.push(value) : flatten(value);
       })
       return newArr;
   };
@@ -37,7 +38,10 @@ Array.prototype.flattenAll = function(){
 }
 
 
-// ["p","a","t",["r","i","c",["k",{name:"patrick"},"m",["n","o","p"]]]].flattenAll = ["p","a","t","r","i","c","k",{name:"patrick"},"m","n","o","p"]
+
+
+
+// console.log(c.flattenAll());
 
 //[1,2,3].everyOther([4,5,6]) = [1,4,2,5,3,6];
 
@@ -73,3 +77,5 @@ Array.prototype.everyOther = function(arr){
     })
   return newArr;
 }
+
+console.log(a.everyOther(b));
